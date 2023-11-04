@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"API","l":"apiMain"},{"p":"data","l":"coinData"},{"p":"<Unnamed>","l":"CoinMarketCapDataFetcher"},{"p":"API","l":"httpHelper"},{"p":"API","l":"jsonParser"},{"p":"test","l":"testHttpHelper"},{"p":"test","l":"testjsonParser"}]

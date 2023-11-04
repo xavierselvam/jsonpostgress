@@ -15,7 +15,6 @@ public class coinData {
         this.PercentChange24h=PercentChange24h;
         this.PercentChange7d=PercentChange7d;
         this.currency=currency;
-
     }
 
     public String getCoinName() {
