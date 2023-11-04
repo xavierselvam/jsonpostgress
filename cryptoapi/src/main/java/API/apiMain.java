@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 public class apiMain implements Runnable {
@@ -25,7 +26,7 @@ public class apiMain implements Runnable {
                     .propertiesBuilder(configFile);
             PropertiesConfiguration configuration = builder.getConfiguration();
             //Fetch List of coins for which prices required
-            List<String> coinList = configuration.getList(String.class, "ListOfCoins");
+            List<String> coinList = Arrays.asList(configuration.getString("ListOfCoins").split(","));
 
             //Establish things needed for http call
 

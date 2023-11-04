@@ -66,6 +66,4 @@ public class coinData {
         this.currency = currency;
     }
 
-
-
 }

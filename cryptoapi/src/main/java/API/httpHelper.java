@@ -46,7 +46,7 @@ public class httpHelper {
             while ((line = reader.readLine()) != null) {
                 result.append(line);
             }
-            logger.info("please" + result);
+            logger.info("Completed http request");
             jsonData=result.toString();
         } catch (Exception e) {
             e.printStackTrace();
