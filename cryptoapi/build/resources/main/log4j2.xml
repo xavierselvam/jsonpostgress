@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+
+    <Appenders>
+        <RollingFile name="File" fileName="/home/xavier/work/JavaLogs/cmcApp.log" filePattern="/home/xavier/work/JavaLogs/cmcApp-%d{yyyy-MM-dd-HH-mm-ss}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss,SSS} [%t] %c %x%n  %-5p %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
