@@ -8,8 +8,14 @@ public class coinData {
     String PercentChange7d;
     String currency;
 
-    public coinData(String coinName) {
+    public coinData(String coinName,String price,String PercentChange1h,String PercentChange24h, String PercentChange7d,String currency) {
         this.coinName = coinName;
+        this.price=price;
+        this.PercentChange1h=PercentChange1h;
+        this.PercentChange24h=PercentChange24h;
+        this.PercentChange7d=PercentChange7d;
+        this.currency=currency;
+
     }
 
     public String getCoinName() {

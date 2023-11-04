@@ -1,5 +1,6 @@
 package API;
 
+import data.coinData;
 import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Configurations;
@@ -29,8 +30,10 @@ public class apiMain implements Runnable {
             //Establish things needed for http call
 
             httpHelper hh= new httpHelper();
-            hh.getLatestPricesForListOfCoins(coinList);
-
+            String jsonData = hh.getLatestPricesForListOfCoins(coinList);
+            jsonParser jsonparser=new jsonParser();
+            List<coinData> conins= jsonparser.convertJsonToObject(coinList,jsonData);
+            logger.info(conins.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

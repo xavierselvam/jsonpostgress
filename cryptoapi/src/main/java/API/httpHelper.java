@@ -18,7 +18,8 @@ import java.util.List;
 public class httpHelper {
     Logger logger = LogManager.getLogger(apiMain.class);
 
-    public void getLatestPricesForListOfCoins(List<String> coinList) {
+    public String getLatestPricesForListOfCoins(List<String> coinList) {
+        String jsonData=" ";
         try {
 
             final File configFile = new File("cmcApi.cfg");
@@ -40,15 +41,16 @@ public class httpHelper {
             logger.info("fetching values for coins");
             HttpResponse response = client.execute(request);
             BufferedReader reader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
-
             StringBuilder result = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
                 result.append(line);
             }
-            logger.info("please" + line);
+            logger.info("please" + result);
+            jsonData=result.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
+       return jsonData;
     }
 }
